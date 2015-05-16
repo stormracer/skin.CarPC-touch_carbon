@@ -230,15 +230,30 @@
 					<onclick>ReloadSkin</onclick>
 					<icon>icon_refresh_w.png</icon>
 				</item>-->
-				<item>
+				<!--<item>
 					<label></label>
 					<onclick>ActivateWindow(Favourites)</onclick>
 					<icon>icon_favourites_w.png</icon>
+				</item>-->
+				<!--<item>
+					<label></label>
+					<onclick>ActivateWindow(Settings)</onclick>
+					<icon>icon_settings_w.png</icon>
+				</item>-->
+				<item>
+					<label></label>
+					<onclick>XBMC.ReloadSkin()</onclick>
+					<icon>special://skin/media/reloadskin_icon.png</icon>
 				</item>
 				<item>
 					<label></label>
 					<onclick>ActivateWindow(Settings)</onclick>
-					<icon>icon_settings_w.png</icon>
+					<icon>special://skin/media/settings_icon.png</icon>
+				</item>
+				<item>
+					<label></label>
+					<onclick>RunScript("special://skin/scripts/system_reboot.py")</onclick>
+					<icon>special://skin/media/reboot_icon.png</icon>
 				</item>
 			</content>
 		</control>
