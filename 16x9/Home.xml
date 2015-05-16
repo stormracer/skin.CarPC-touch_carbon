@@ -65,7 +65,7 @@
 	  <include>Favourites</include>
 	  
 		
-		<control type="image">
+		<!--<control type="image">
 			<description>Normal Default Logo Image</description>
 			<posx>440</posx>
 			<posy>147</posy>
@@ -86,6 +86,120 @@
 			<texture>$INFO[Skin.String(CustomLogoPath)]</texture>
 			<visible>Skin.HasSetting(UseCustomLogo) + !IsEmpty(Skin.String(CustomLogoPath))</visible>
 			<include>Window_OpenClose_Animation_Zoom</include>
+		</control>-->
+		
+		<control type="image">
+			<description>Normal Default Logo Image</description>
+			<posx>424</posx>
+			<posy>130</posy>
+			<width>435</width>
+			<height>435</height>
+			<aspectratio></aspectratio>
+			<texture>logo.png</texture>
+			<visible>!Player.HasAudio + ![Skin.HasSetting(UseCustomLogo) + !IsEmpty(Skin.String(CustomLogoPath))]</visible>
+			<include>Window_OpenClose_Animation_Zoom</include>
+		</control>
+		<control type="image">
+			<description>User Set Logo Image</description>
+			<include>Window_OpenClose_Animation_Zoom</include>
+			<posx>424</posx>
+			<posy>130</posy>
+			<width>435</width>
+			<height>435</height>
+			<aspectratio></aspectratio>
+			<texture>$INFO[Skin.String(CustomLogoPath)]</texture>
+			<visible>!Player.HasAudio + Skin.HasSetting(UseCustomLogo) + !IsEmpty(Skin.String(CustomLogoPath))</visible>
+			<include>Window_OpenClose_Animation_Zoom</include>
+		</control>		
+		<control type="visualisation" id="2">
+			<description>visualisation</description>
+			<include>Window_OpenClose_Animation_Zoom</include>
+			<left>365</left>
+			<top>50</top>
+			<width>550</width>
+			<height>550</height>
+			<visible>Player.HasAudio + Window.IsVisible(home)</visible>
+			<fadetime>600</fadetime>
+		</control>
+		<control type="group">
+            <left>365</left>
+            <top>50</top>
+			<width>550</width>
+            <height>550</height>
+			<visible>Player.HasAudio + Window.IsVisible(home)</visible>
+            <control type="label">
+                <visible>true</visible>
+                <left>150</left>
+				<top>165</top>
+                <width>250</width>
+                <height>100</height>
+                <font>font13</font>
+                <textcolor>white</textcolor>
+                <selectedcolor>selected</selectedcolor>
+                <align>center</align>
+                <info>MusicPlayer.Artist</info>
+                <scroll>true</scroll>
+                <scrollspeed>50</scrollspeed>
+                <scrollsuffix> - </scrollsuffix>
+				<wrapmultiline>false</wrapmultiline>
+            </control>
+            <control type="label">
+                <visible>true</visible>
+                <left>150</left>
+				<top>140</top>
+                <width>250</width>
+                <height>100</height>
+                <font>font13_title</font>
+                <textcolor>white</textcolor>
+                <selectedcolor>selected</selectedcolor>
+                <align>center</align>
+                <info>MusicPlayer.Title</info>
+				<scroll>true</scroll>
+                <scrollspeed>50</scrollspeed>
+                <scrollsuffix> - </scrollsuffix>
+				<wrapmultiline>false</wrapmultiline>
+            </control>
+			<control type="label">
+				<visible>true</visible>
+				<left>120</left>
+				<top>455</top>
+                <width>250</width>
+                <height>100</height>
+				<font>font11</font>
+				<textcolor>white</textcolor>
+                <selectedcolor>selected</selectedcolor>
+                <align>center</align>
+				<label>[1]</label>
+				<info>musicplayer.time</info>
+				<visible>Player.HasAudio + Window.IsVisible(home)</visible>
+			</control>
+			<control type="label">
+				<visible>true</visible>
+				<left>150</left>
+				<top>455</top>
+                <width>250</width>
+                <height>100</height>
+				<font>font11</font>
+				<textcolor>white</textcolor>
+                <selectedcolor>selected</selectedcolor>
+                <align>center</align>
+				<label>/</label>
+				<visible>Player.HasAudio + Window.IsVisible(home)</visible>
+			</control>
+			<control type="label">
+				<visible>true</visible>
+				<left>180</left>
+				<top>455</top>
+                <width>250</width>
+                <height>100</height>
+				<font>font11</font>
+				<textcolor>white</textcolor>
+                <selectedcolor>selected</selectedcolor>
+                <align>center</align>
+				<label>[1]</label>
+				<info>musicplayer.duration</info>
+				<visible>Player.HasAudio + Window.IsVisible(home)</visible>
+			</control>
 		</control>
 
 	
